@@ -1,0 +1,22 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+        endpoint: "0.0.0.0:4318"
+
+exporters:
+  zipkin:
+    endpoint: "http://jaeger:9411/api/v2/spans"  # Jaeger Zipkin HTTP endpoint
+  prometheus:
+    endpoint: "0.0.0.0:8889"  # Prometheus metrics scraping endpoint
+  debug: {}
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [zipkin, debug]
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus, debug]

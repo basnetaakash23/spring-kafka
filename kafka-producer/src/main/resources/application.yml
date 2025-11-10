@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+server:
+  port: 8080
+
+logging:
+  pattern:
+    level: "%5p [traceId=%X{trace_id} spanId=%X{span_id}]"
+
+
