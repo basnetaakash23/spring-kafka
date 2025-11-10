@@ -1,7 +1,7 @@
 HELP.md
 target/
 kafka_2.13-3.7.0
- kafka_2.13-3.7.0.tgz
+kafka_2.13-3.7.0.tgz
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
